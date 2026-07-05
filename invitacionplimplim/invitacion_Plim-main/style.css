@@ -1,0 +1,522 @@
+/* General */
+
+
+/* General */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #E53935;
+    /*background-image: url('./img/fondo\ gris.avif');
+    /* cambia por tu imagen */
+    background-size: cover;
+    /* ocupa todo el fondo */
+    background-position: center;
+    /* centrada */
+    background-repeat: no-repeat;
+    /* no se repite */
+    background-attachment: fixed;
+    /* opcional: fija al hacer scroll */
+    font-family: 'Fredoka', sans-serif;
+}
+
+
+/* Header con video */
+
+header {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    /* altura desktop */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    min-width: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    /* llena el header sin deformar */
+    z-index: 1;
+}
+
+
+/*
+.header-overlay {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    text-align: center;
+}
+*/
+
+
+/* Ajustes para móviles */
+
+@media (max-width: 768px) {
+    header {
+        height: 250px;
+        /* menos alto en tablets */
+    }
+    header h1 {
+        font-size: 2rem;
+        /* título más pequeño */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 180px;
+        /* altura mínima en celulares */
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* Secciones */
+
+.seccion {
+    background-color: #E53935;
+    /* blanco para secciones */
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* H1: negro suave */
+
+header h1 {
+    color: #E53935;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+}
+
+
+/* H2: dorado pastel */
+
+.seccion h2 {
+    color: #E53935;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+
+/* P: rojo pastel y cursiva */
+
+.seccion p {
+    color: #E53935;
+    font-family: 'Fredoka', sans-serif;
+   /* font-style: italic;*/
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.seccion img,
+.video-invitacion {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Iconos GIF */
+
+.iconos {
+    display: flex;
+    flex-direction: column;
+    /* columna vertical */
+    align-items: center;
+    /* centra horizontalmente */
+    gap: 30px;
+    /* espacio entre cada GIF+texto */
+    margin: 50px 0;
+}
+
+.gif-text {
+    text-align: center;
+}
+
+.gif-text img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gif-text p {
+    font-family: 'Fredoka', sans-serif;
+    /* font-style: italic;  */
+    color: #141313;
+    /* rojo pastel */
+    font-size: 1.1rem;
+}
+
+
+/* Botón flotante WhatsApp */
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #25d366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.whatsapp-button img {
+    width: 35px;
+    height: 35px;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Animación para aparecer suavemente */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    /* menos espacio entre bloques en móviles */
+    flex-wrap: wrap;
+    /* permite que los bloques pasen a la siguiente línea si no caben */
+    font-family: 'Fredoka', sans-serif;
+    margin: 30px 0;
+}
+
+.time-box {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 15px 10px;
+    /* reducir padding en móviles */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    min-width: 60px;
+    /* ancho mínimo menor para celulares */
+}
+
+.time-box span {
+    display: block;
+    font-size: 2rem;
+    /* reducir tamaño del número en móviles */
+    font-weight: bold;
+    color: #f14141;
+    /* dorado pastel */
+    animation: fadeIn 0.5s ease;
+}
+
+#seconds {
+    color: #f16d6d;
+    /* dorado más intenso */
+}
+
+.time-box p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    /* texto más pequeño en móviles */
+    color: #333333;
+}
+
+
+/* Media query para pantallas pequeñas */
+
+@media (max-width: 480px) {
+    #countdown {
+        gap: 10px;
+    }
+    .time-box {
+        padding: 10px 8px;
+        min-width: 50px;
+    }
+    .time-box span {
+        font-size: 1.5rem;
+    }
+    .time-box p {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* Animación pop al actualizar */
+
+.pop {
+    animation: popAnim 0.3s ease;
+}
+
+@keyframes popAnim {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Aparición suave */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gif-text {
+    text-align: center;
+    margin-bottom: 30px;
+    /* espacio entre este bloque y el siguiente */
+}
+
+.gif-text img {
+    width: 100px;
+    height: auto;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gif-text p {
+    font-family: 'Fredoka', sans-serif;
+   
+    color: #080808;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    /* espacio entre texto y botón */
+}
+
+.iconos- section img {
+    width: 100px;
+    /* ajusta tamaño */
+    height: 100px;
+    /* mismo que width para que sea círculo */
+    border-radius: 50%;
+    /* hace la imagen redonda */
+    object-fit: cover;
+    /* mantiene la proporción y recorta si es necesario */
+    margin: 10px;
+    /* separación entre los GIFs */
+}
+
+.btn-maps {
+    display: inline-block;
+    background-color: #E53935;
+    color: #1a1a1a;
+     font-family: 'Fredoka', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#play-btn {
+    all: unset;
+    /* elimina estilos por defecto del navegador */
+    background-color: #E53935;
+    /* dorado */
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(67, 179, 243, 0.842);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#play-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+#play-btn svg {
+    width: 48px;
+    height: 48px;
+    fill: black;
+    /* el icono es negro */
+}
+
+
+/* 🎵 Botón flotante de música */
+
+#play-btn {
+    all: unset;
+    background-color: #E53935;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#play-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+#play-btn svg {
+    width: 36px;
+    height: 36px;
+    fill: black;
+}
+
+
+/* Opcional: más pequeño en celular */
+
+@media (max-width: 600px) {
+    #play-btn {
+        width: 55px;
+        height: 55px;
+    }
+    #play-btn svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.iconos-section {
+    background: #FDD835;
+    /* background-image: url('./img/');
+    /* ruta de tu imagen */
+    background-size: cover;
+    /* que cubra toda la sección */
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 20px;
+}
+
+#padres {
+    background: #FDD835;
+    /*background-image: url('img/co2mard.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 20px;
+    */
+}
+
+#reloj {
+    background: #FDD835;
+    /*background-image: url('img/co2mard.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 20px;
+    */
+}
+
+#invita {
+    background: #FDD835;
+    color:#E53935;
+    /*background-image: url('img/marco.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 20px;*/
+}
+
+#video {
+    background-image: url('img/co2mard.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#video {
+    padding: 20px;
+    text-align: center;
+    /* centra el título y el video */
+    background-color: #FDD835;
+    /* opcional, fondo pastel */
+}
+
+.video-invitacion {
+    width: 100%;
+    /* ocupa todo el ancho del contenedor */
+    max-width: 500px;
+    /* opcional: no se haga gigante en pantallas grandes */
+    height: auto;
+    /* mantiene proporción */
+    object-fit: cover;
+    /* recorta bordes si hace falta para llenar el contenedor */
+    border-radius: 15px;
+    /* opcional: bordes redondeados */
+}
+h1, h2{
+    font-family: "Fredoka", sans-serif;
+    animation: flotar 2s ease-in-out infinite;
+}
+
+@keyframes flotar{
+    0%,100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+}

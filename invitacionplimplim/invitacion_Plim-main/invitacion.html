@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Invitación PlimPlim</title>
+
+    <!-- Fuente elegante para invitación -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header con video de fondo -->
+    <header>
+        <video autoplay muted loop class="header-video">
+            <source src="img/videoplayback.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+        <div class="header-overlay">
+
+        </div>
+    </header>
+
+    <!-- Sección 1 -->
+    <section class="seccion " id="padres">
+        <h2>! Te invito a mi fiesta ¡
+        </h2>
+        <img src="img/mcikey.webp" alt="Imagen Sección 1">
+      
+       <!-- <p>Estamos muy felices de invitarte a celebrar este momento especial con nosotros.</p>-->
+    </section>
+
+    <!-- Sección 2 -->
+    <section class="seccion" id="reloj">
+        <h2>La cuenta regresiva comenzo.
+        </h2>
+
+
+        <p>"Mi fiesta sera el próximo 15 de Agosto, a las 15hs".</p>
+        <div id="countdown">
+            <div class="time-box">
+                <span id="days"></span>
+                <p>Días</p>
+            </div>
+            <div class="time-box">
+                <span id="hours"></span>
+                <p>Horas</p>
+            </div>
+            <div class="time-box">
+                <span id="minutes"></span>
+                <p>Minutos</p>
+            </div>
+            <div class="time-box">
+                <span id="seconds"></span>
+                <p>Segundos</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Sección 3: texto invitacion -->
+
+    <section class="seccion" id="invita">
+        <h1>Con mucha alegría y amor, te invitamos a celebrar los 2 años de nuestro hijo: </h1>
+        <img src="img/niñomickey.jpg" alt="Imagen Sección 1" width="400" height="400">
+        <h2>Mateo Perez.</h2>
+
+
+    <!--
+        <p>Estamos muy felices de invitarte a celebrar este momento especial con nosotros.</p>-->
+    </section>
+
+    <!-- Sección 3: Video -->
+    <section class="seccion" id="video">
+       <!-- <h2>Video de Invitación</h2>-->
+        <video controls autoplay muted loop class="video-invitacion">
+            <source src="musica/mousemarcha.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+    </section>
+
+    <!-- Sección 4: GIFs -->
+    <section class="seccion iconos-section">
+    <!--<h2>Itinerario</h2>-->
+
+        <div class="gif-text">
+            <img src="img/mickey baila.gif" alt="Copas">
+            <h2>Lugar de mi fiesta.</h2>
+            
+            <h3>Salon "El Pelotazo".
+            </h3>
+            <a href="https://maps.app.goo.gl/aqvKgUb8zoQtBNSq8" target="_blank" class="btn-maps">Como llegar</a>
+            </a>
+
+        </div>
+<!--<h2>Itinerario</h2>
+        <div class="gif-text">
+            <img src="img/baile plim.webp" alt="Ropa">
+            <p>Recepción. </p>
+            <p>Horario: 1 pm</p>
+            <p>Local Cetina.</p>
+
+            <a href="https://maps.app.goo.gl/4yH8B6fPGob2rNoa7" target="_blank" class="btn-maps">Ver en Maps</a>
+            </a>
+        </div>-->
+
+
+        <div class="gif-text">
+            <img src="img/mickeyregalo.png" alt="Regalos">
+            <h2>Horario
+            </h2>
+            <h3>15 a 18hs</h3>
+        </div>
+
+        <div class="gif-text">
+            <img src="img/mickey corazon.png" alt="Iglesia">
+            <h2>Te Esperamos. </h2>
+        </div>
+        
+        <h3>Confirma tu asistencia</h3>
+
+    </section>
+
+    <!-- Audio -->
+    <button id="play-btn">
+  <!-- Ícono Play -->
+  <svg id="icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black">
+    <path d="M8 5v14l11-7z"/>
+  </svg>
+  <!-- Ícono Pause -->
+  <svg id="icon-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" style="display:none;">
+    <path d="M6 19h4V5H6zm8-14v14h4V5h-4z"/>
+  </svg>
+</button>
+    <audio id="bg-music" src="musica/mousemarcha.mp3" loop></audio>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a class="whatsapp-button" href="https://wa.me/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+
+</html>
